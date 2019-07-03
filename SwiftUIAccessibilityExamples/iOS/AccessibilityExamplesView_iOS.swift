@@ -34,12 +34,12 @@ struct AccessibilityExamplesView: View {
         NavigationView {
             List {
                 ForEach(examples.identified(by: \.name)) { example in
-                    NavigationButton(destination: ExampleView(example)) {
+                    NavigationLink(destination: ExampleView(example)) {
                         Text(verbatim: example.name)
                     }
                 }
             }
-            .navigationBarItem(title: Text("Examples"))
+            .navigationBarTitle(Text("Examples"))
         }
     }
 }
