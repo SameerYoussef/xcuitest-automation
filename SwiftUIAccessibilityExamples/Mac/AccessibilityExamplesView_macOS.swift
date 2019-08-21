@@ -27,7 +27,7 @@ struct AccessibilityExamplesView: View {
     var body: some View {
         HSplitView {
             List(selection: $selection) {
-                ForEach(examples.identified(by: \.name)) { example in
+                ForEach(examples, id: \.name) { example in
                     Text(verbatim: example.name)
                 }
                 Spacer()

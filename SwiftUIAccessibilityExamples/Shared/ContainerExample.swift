@@ -47,7 +47,7 @@ struct ContainerExample: View {
             .border(Color.blue, width: 0.5)
             // Hide all the accessibility elements that come from controls
             // inside this stack
-            .accessibility(visibility: .hidden)
+            .accessibility(hidden: true)
             // Create a new accessibility element to contain them
             .accessibilityElement(children: .contain)
             .accessibility(label: Text("Hiding Container"))

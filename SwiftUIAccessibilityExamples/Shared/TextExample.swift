@@ -21,7 +21,7 @@ struct TextExample: View {
             LargeSpacer()
 
             Text("Formatted Text")
-                .color(.red)
+                .foregroundColor(.red)
                 .bold()
 
             LargeSpacer()

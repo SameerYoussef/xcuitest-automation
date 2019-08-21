@@ -6,8 +6,6 @@ iOS accessibility examples view
 */
 
 import Foundation
-
-import Foundation
 import SwiftUI
 
 // Contents view for a specific example
@@ -33,7 +31,7 @@ struct AccessibilityExamplesView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(examples.identified(by: \.name)) { example in
+                ForEach(examples, id: \.name) { example in
                     NavigationLink(destination: ExampleView(example)) {
                         Text(verbatim: example.name)
                     }
