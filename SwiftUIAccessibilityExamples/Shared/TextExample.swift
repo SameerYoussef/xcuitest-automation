@@ -11,18 +11,21 @@ import SwiftUI
 struct TextExample: View {
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Automatic Text")
-
-            LargeSpacer()
-
-            Text("Relabeled Text")
-                .accessibility(label: Text("Accessibility Label"))
-
-            LargeSpacer()
-
-            Text("Formatted Text")
+            Text("Environment Variable")
                 .foregroundColor(.red)
                 .bold()
+            
+            Text(String(ProcessInfo.processInfo.environment["ENVIRONMENT_VARIABLE_INT"] ?? "not found"))
+                .accessibility(label: Text("Environment Variable"))
+            
+            LargeSpacer()
+
+            Text("Arguments Passed On Launch")
+                .foregroundColor(.red)
+                .bold()
+            
+            Text(UserDefaults.standard.bool(forKey: "ARGUMENTS_PASSED_ON_LAUNCH_BOOL") ? "True" : "False")
+                .accessibility(label: Text("Arguments Passed On Launch"))
 
             LargeSpacer()
 
